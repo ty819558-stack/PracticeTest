@@ -96,7 +96,7 @@
             </button>
 
             <!-- ====================================================== -->
-            <!-- == NEW SCREEN: TEACHER DASHBOARD == -->
+            <!-- == TEACHER DASHBOARD SCREEN == -->
             <!-- ====================================================== -->
             <div id="teacher-dashboard-screen" class="hidden">
                 <header class="text-center animatable">
@@ -142,7 +142,7 @@
             <!-- ====================================================== -->
             <!-- == HOME SCREEN (Grade Selection) == -->
             <!-- ====================================================== -->
-            <div id="home-screen" class="hidden"> <!-- Also hidden by default now -->
+            <div id="home-screen" class="hidden">
                 <header class="text-center animatable">
                     <h1 class="text-3xl md:text-5xl font-bold text-slate-800">
                         SC Ready Practice Test ✏️
@@ -188,14 +188,12 @@
                     </button>
 
                     <!-- Box 5: 4th Grade Science (Direct Link) - New Color, Corners, Emoji -->
-                    <a 
-                        id="science-link"
-                        href="#" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="flex items-center justify-center text-center text-white p-8 md:p-10 rounded-2xl shadow-md font-bold text-2xl md:text-3xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-purple-500 hover:bg-purple-600 sm:col-span-1">
+                    <button 
+                        data-grade="4th Grade Science"
+                        data-path="4th Grade Science"
+                        class="grade-btn text-white p-8 md:p-10 rounded-2xl shadow-md font-bold text-2xl md:text-3xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-purple-500 hover:bg-purple-600 sm:col-span-1">
                         4th Grade Science 🧪
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -204,75 +202,139 @@
             <!-- ====================================================== -->
             <div id="subject-screen" class="hidden">
                 
-                <!-- Back Button (Softer corners) - Renamed id -->
                 <button id="back-to-grades-btn" class="absolute top-4 left-4 md:top-6 md:left-6 bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl transition-all hover:bg-slate-300">
                     &larr; Back
                 </button>
 
                 <header class="text-center mt-12 md:mt-0 animatable">
-                    <!-- Title will be set by JavaScript -->
-                    <h1 id="subject-title" class="text-3xl md:text-5xl font-bold text-slate-800">
-                        <!-- e.g., 3rd Grade -->
-                    </h1>
+                    <h1 id="subject-title" class="text-3xl md:text-5xl font-bold text-slate-800"></h1>
                     <p class="text-lg md:text-xl text-slate-500 mt-3">
                         Please select a subject.
                     </p>
                 </header>
 
-                <!-- Subject Selection Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-10 md:mt-12 animatable">
                     
-                    <!-- Box 1: ELA (Changed to Button) -->
                     <button 
                         id="ela-btn"
                         data-subject="ELA"
-                        class="flex items-center justify-center text-center text-white p-16 md:p-24 rounded-2xl shadow-md font-bold text-4xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-sky-500 hover:bg-sky-600">
+                        class="subject-btn flex items-center justify-center text-center text-white p-16 md:p-24 rounded-2xl shadow-md font-bold text-4xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-sky-500 hover:bg-sky-600">
                         ELA 📚
                     </button>
                     
-                    <!-- Box 2: Mathematics (Changed to Button) -->
                     <button 
                         id="math-btn"
                         data-subject="Mathematics"
-                        class="flex items-center justify-center text-center text-white p-16 md:p-24 rounded-2xl shadow-md font-bold text-4xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-orange-500 hover:bg-orange-600">
+                        class="subject-btn flex items-center justify-center text-center text-white p-16 md:p-24 rounded-2xl shadow-md font-bold text-4xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-orange-500 hover:bg-orange-600">
                         Mathematics 🧮
                     </button>
                 </div>
             </div>
 
             <!-- ====================================================== -->
-            <!-- == NEW SCREEN 3: TEST SELECTION == -->
+            <!-- == TEST SELECTION SCREEN == -->
             <!-- ====================================================== -->
             <div id="test-selection-screen" class="hidden">
                 
-                <!-- Back Button -->
                 <button id="back-to-subjects-btn" class="absolute top-4 left-4 md:top-6 md:left-6 bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl transition-all hover:bg-slate-300">
                     &larr; Back
                 </button>
 
                 <header class="text-center mt-12 md:mt-0 animatable">
-                    <!-- Title will be set by JavaScript -->
-                    <h1 id="test-title" class="text-3xl md:text-5xl font-bold text-slate-800">
-                        <!-- e.g., 3rd Grade - ELA -->
-                    </h1>
+                    <h1 id="test-title" class="text-3xl md:text-5xl font-bold text-slate-800"></h1>
                     <p id="test-subtitle" class="text-lg md:text-xl text-slate-500 mt-3">
                         Please select a test.
                     </p>
                 </header>
 
-                <!-- Loading Spinner -->
                 <div id="loading-spinner" class="mt-12 flex justify-center items-center h-40">
                     <div class="loader loader-gray"></div>
                     <p class="ml-4 text-slate-600 text-lg">Loading Tests...</p>
                 </div>
 
-                <!-- Test Selection Grid (Dynamic Content) -->
-                <!-- This grid will be 2, 3, or 4 columns based on screen size -->
                 <div id="test-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-12 animatable">
-                    <!-- Test boxes will be generated by JavaScript and inserted here -->
+                    <!-- Test buttons will be generated by JavaScript and inserted here -->
                 </div>
                 <p id="error-message" class="text-center text-red-500 mt-8 text-lg"></p>
             </div>
+
+            <!-- ====================================================== -->
+            <!-- == NEW SCREEN 4: TEST TAKER == -->
+            <!-- ====================================================== -->
+            <div id="test-taker-screen" class="hidden">
+                <button id="back-to-tests-btn" class="absolute top-4 left-4 md:top-6 md:left-6 bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl transition-all hover:bg-slate-300">
+                    &larr; Back to Tests
+                </button>
+
+                <header class="text-center mt-12 md:mt-0 animatable">
+                    <h1 id="quiz-title" class="text-3xl md:text-5xl font-bold text-slate-800"></h1>
+                    <p id="quiz-standard" class="text-lg md:text-xl text-slate-500 mt-3"></p>
+                </header>
+
+                <form id="quiz-form" class="mt-10 md:mt-12 space-y-8 animatable">
+                    <!-- Quiz questions will be generated by JavaScript and inserted here -->
+                    <!-- Example Question Structure:
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-inner" id="question-0">
+                        <p class="text-lg font-semibold text-slate-700">Question 1 of 10</p>
+                        <p class="text-xl text-slate-800 mt-2">This is the question stem?</p>
+                        <div class="space-y-3 mt-4">
+                            <label class="flex items-center p-4 border rounded-xl has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500">
+                                <input type="radio" name="question-0" value="0" class="h-5 w-5 text-blue-600">
+                                <span class="ml-4 text-lg text-slate-700">Option A</span>
+                            </label>
+                            <label class="flex items-center p-4 border rounded-xl has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500">
+                                <input type="radio" name="question-0" value="1" class="h-5 w-5 text-blue-600">
+                                <span class="ml-4 text-lg text-slate-700">Option B</span>
+                            </label>
+                        </div>
+                    </div>
+                    -->
+                </form>
+
+                <button id="submit-test-btn" class="w-full mt-8 flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105">
+                    Submit Test for Grading
+                </button>
+                <p id="test-submit-message" class="text-center text-red-500 mt-4 h-6"></p>
+            </div>
+
+            <!-- ====================================================== -->
+            <!-- == NEW SCREEN 5: SCORE SCREEN == -->
+            <!-- ====================================================== -->
+            <div id="score-screen" class="hidden">
+                <header class="text-center animatable">
+                    <h1 class="text-2xl md:text-4xl font-bold text-slate-800">
+                        Test Submitted!
+                    </h1>
+                    <p class="text-6xl md:text-8xl font-bold text-blue-600 mt-6" id="final-score">
+                        <!-- e.g., 8/10 -->
+                    </p>
+                    <p class="text-2xl md:text-3xl text-slate-600 mt-4" id="score-message">
+                        <!-- e.g., Great job! -->
+                    </p>
+                </header>
+
+                <!-- NEW AI Report Section -->
+                <div id="ai-report-section" class="mt-12 animatable hidden">
+                    <div class="bg-gray-50 p-6 rounded-2xl shadow-inner">
+                        <h2 class="text-2xl font-bold text-slate-700">Your Personal Practice Plan 🤖</h2>
+                        <p class="text-slate-600 mt-2">You missed a few questions on these skills. Here are some resources to help you master them!</p>
+                        
+                        <div id="ai-report-content" class="mt-6 space-y-4">
+                            <!-- AI-generated content will go here -->
+                        </div>
+                        
+                        <button id="get-ai-report-btn" class="w-full mt-6 flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105">
+                            Generate My Practice Plan
+                        </button>
+                        <p id="ai-report-message" class="text-center text-slate-600 mt-4 h-6"></p>
+                    </div>
+                </div>
+
+                <button id="back-to-home-btn" class="w-full mt-8 flex items-center justify-center gap-3 bg-slate-600 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105">
+                    Back to Home
+                </button>
+            </div>
+
 
         </div>
     </div>
@@ -283,17 +345,24 @@
     <!-- Import Firebase SDKs -->
     <script type="module">
         // Import functions from the Firebase SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // *** UPDATED Firebase version from 9.15.0 to 9.23.0 ***
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
         // Import analytics
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
         // Import only the auth functions we need
-        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
         // *** NEW *** Import Firestore functions
-        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+        import { 
+            getFirestore, 
+            doc, 
+            getDoc,
+            setDoc,        // <-- NEW: For creating user docs
+            addDoc,        // <-- NEW: For saving submissions
+            collection,    // <-- NEW: For saving submissions
+            serverTimestamp  // <-- NEW: For timestamps
+        } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
         // --- 1. FIREBASE CONFIGURATION ---
-        // !! IMPORTANT !!
-        // Paste your `firebaseConfig` object from Step 1 here
         const firebaseConfig = {
             apiKey: "AIzaSyBfvwMOWXRqN1QmFVoHJZo2mWvnrQMxm1k",
             authDomain: "scready-f7bc9.firebaseapp.com",
@@ -309,15 +378,13 @@
         // Replace this with the URL of your GitHub repository
         const GITHUB_REPO_URL = "https://github.com/YOUR_USERNAME/YOUR_REPO_NAME";
         
-        // You probably won't need to change this (main is the default branch)
         const GITHUB_BRANCH = "main";
         
-        // --- Parsed from URL ---
         let GITHUB_OWNER = 'YOUR_USERNAME';
         let GITHUB_REPO = 'YOUR_REPO_NAME';
         try {
             const urlParts = new URL(GITHUB_REPO_URL);
-            const pathParts = urlParts.pathname.split('/').filter(Boolean); // filter(Boolean) removes empty strings
+            const pathParts = urlParts.pathname.split('/').filter(Boolean); 
             if (pathParts.length >= 2) {
                 GITHUB_OWNER = pathParts[0];
                 GITHUB_REPO = pathParts[1];
@@ -326,7 +393,6 @@
             console.error("Could not parse GITHUB_REPO_URL. Please ensure it's a valid URL.");
         }
         
-        // Base URL for the GitHub API
         const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`;
         // --- END CONFIGURATION ---
 
@@ -335,7 +401,6 @@
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const auth = getAuth(app);
-        // *** NEW *** Initialize Firestore
         const db = getFirestore(app);
 
         
@@ -343,17 +408,14 @@
         const loginScreen = document.getElementById('login-screen');
         const mainContent = document.getElementById('main-content');
         
-        // Updated to get the new form elements
         const loginForm = document.getElementById('login-form');
         const loginEmail = document.getElementById('login-email');
         const loginPassword = document.getElementById('login-password');
         
         const logoutBtn = document.getElementById('logout-btn');
         const loginMessage = document.getElementById('login-message');
-
-        const baseRepoUrl = `${GITHUB_REPO_URL}/tree/${GITHUB_BRANCH}`;
         
-        // *** NEW *** Dashboard Elements
+        // Dashboard Elements
         const teacherDashboardScreen = document.getElementById('teacher-dashboard-screen');
         const createStudentForm = document.getElementById('create-student-form');
         const studentEmail = document.getElementById('student-email');
@@ -367,15 +429,12 @@
         const testSelectionScreen = document.getElementById('test-selection-screen');
 
         const gradeButtons = document.querySelectorAll('.grade-btn');
-        const scienceLink = document.getElementById('science-link');
-        const backBtn = document.getElementById('back-to-grades-btn');
+        const backToGradesBtn = document.getElementById('back-to-grades-btn');
         const subjectTitle = document.getElementById('subject-title');
         
-        // Changed links to buttons
-        const elaBtn = document.getElementById('ela-btn');
-        const mathBtn = document.getElementById('math-btn');
+        const subjectButtons = document.querySelectorAll('.subject-btn');
 
-        // New Test Screen Elements
+        // Test Screen Elements
         const backToSubjectsBtn = document.getElementById('back-to-subjects-btn');
         const testTitle = document.getElementById('test-title');
         const testSubtitle = document.getElementById('test-subtitle');
@@ -383,35 +442,54 @@
         const testGrid = document.getElementById('test-grid');
         const errorMessage = document.getElementById('error-message');
         
-        // Animation collections
-        const dashboardAnimatables = teacherDashboardScreen.querySelectorAll('.animatable');
-        const homeAnimatables = homeScreen.querySelectorAll('.animatable');
-        const subjectAnimatables = subjectScreen.querySelectorAll('.animatable');
-        const testAnimatables = testSelectionScreen.querySelectorAll('.animatable');
+        // ** NEW ** Test Taker Elements
+        const testTakerScreen = document.getElementById('test-taker-screen');
+        const backToTestsBtn = document.getElementById('back-to-tests-btn');
+        const quizTitle = document.getElementById('quiz-title');
+        const quizStandard = document.getElementById('quiz-standard');
+        const quizForm = document.getElementById('quiz-form');
+        const submitTestBtn = document.getElementById('submit-test-btn');
+        const testSubmitMessage = document.getElementById('test-submit-message');
 
+        // ** NEW ** Score Screen Elements
+        const scoreScreen = document.getElementById('score-screen');
+        const finalScore = document.getElementById('final-score');
+        const scoreMessage = document.getElementById('score-message');
+        const aiReportSection = document.getElementById('ai-report-section');
+        const getAiReportBtn = document.getElementById('get-ai-report-btn');
+        const aiReportContent = document.getElementById('ai-report-content');
+        const aiReportMessage = document.getElementById('ai-report-message');
+        const backToHomeBtn = document.getElementById('back-to-home-btn');
+        
+        // Animation collections
+        const allScreens = [
+            loginScreen, 
+            teacherDashboardScreen, 
+            homeScreen, 
+            subjectScreen, 
+            testSelectionScreen,
+            testTakerScreen,
+            scoreScreen
+        ];
+        
         // --- Global State Variables ---
         let currentGrade = '';
         let currentGradePath = '';
+        let currentSubject = '';
+        let currentQuizData = null; // Will hold the JSON for the active quiz
+        let currentUserId = null; // Will hold the logged-in user's ID
 
         
         // --- 4. AUTHENTICATION LOGIC ---
 
-        // Listen for Login form submission
         loginForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop the form from reloading the page
-            
+            e.preventDefault(); 
             const email = loginEmail.value;
             const password = loginPassword.value;
             loginMessage.textContent = "Signing in...";
 
             signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    // Login logic will now be handled by onAuthStateChanged
-                })
                 .catch((error) => {
-                    // Handle Errors here.
                     console.error("Sign-in error", error.code);
                     if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
                         loginMessage.textContent = "Invalid email or password.";
@@ -421,31 +499,23 @@
                 });
         });
 
-        // Listen for Logout button click
         logoutBtn.addEventListener('click', () => {
             signOut(auth);
         });
 
-        // *** NEW *** Main auth state listener with ROLE CHECKING
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // User is signed in, check their role
+                currentUserId = user.uid; // Store the user's ID globally
                 checkUserRole(user);
             } else {
-                // User is signed out
+                currentUserId = null;
                 showLoginScreen();
             }
         });
 
-        /**
-         * *** NEW ***
-         * Checks the user's role in Firestore and routes them to the correct screen.
-         */
         async function checkUserRole(user) {
             loginMessage.textContent = "Checking authorization...";
-
             try {
-                // 1. Get the user's document from the 'users' collection using their UID
                 const docRef = doc(db, "users", user.uid);
                 const docSnap = await getDoc(docRef);
 
@@ -453,29 +523,22 @@
                     const userData = docSnap.data();
                     const role = userData.role;
 
-                    // 2. Route the user based on their role
                     if (role === 'teacher') {
                         showTeacherDashboard();
                     } else if (role === 'student') {
                         showStudentContent();
                     } else {
-                        // Role is invalid
                         loginMessage.textContent = "Your account has an invalid role.";
                         signOut(auth);
                     }
                 } else {
-                    // No document found for this user in the 'users' collection
                     loginMessage.textContent = "Your account is not configured. Please contact an administrator.";
                     signOut(auth);
                 }
             } catch (error) {
                 console.error("Error checking user role:", error);
-                
-                // *** MODIFIED ERROR HANDLING ***
-                // Check if the error is specifically a permissions issue
                 if (error.code === 'permission-denied' || (error.message && error.message.includes("permissions"))) {
                     loginMessage.textContent = "Error: Please check your Firestore Security Rules.";
-                    // Log a helpful message for the user
                     console.log("FIX: Go to your Firestore 'Rules' tab and ensure you allow users to read their own document in the 'users' collection.");
                 } else {
                     loginMessage.textContent = "An error occurred while checking your role.";
@@ -484,84 +547,121 @@
             }
         }
 
-        /**
-         * *** NEW ***
-         * Hides the main content and shows the login screen
-         */
+        // --- 5. SCREEN NAVIGATION LOGIC ---
+
         function showLoginScreen() {
             mainContent.classList.add('hidden');
             loginScreen.classList.remove('hidden');
-            loginMessage.textContent = ""; // Clear any old messages
+            loginMessage.textContent = ""; 
         }
 
-        /**
-         * *** NEW ***
-         * Hides login, shows main content, and routes to the Teacher Dashboard
-         */
         function showTeacherDashboard() {
             loginScreen.classList.add('hidden');
             mainContent.classList.remove('hidden');
             loginMessage.textContent = "";
-
-            // Hide all other screens
-            homeScreen.classList.add('hidden');
-            subjectScreen.classList.add('hidden');
-            testSelectionScreen.classList.add('hidden');
-
-            // Show the dashboard
-            teacherDashboardScreen.classList.remove('hidden');
-            
-            // Trigger animation
-            dashboardAnimatables.forEach(el => el.classList.add('pop-in'));
+            animateScreenTransition(null, teacherDashboardScreen);
         }
 
-        /**
-         * *** NEW ***
-         * Hides login, shows main content, and routes to the Student (Grade) screen
-         */
         function showStudentContent() {
             loginScreen.classList.add('hidden');
             mainContent.classList.remove('hidden');
             loginMessage.textContent = "";
+            animateScreenTransition(null, homeScreen);
+        }
 
-            // Hide all other screens
-            teacherDashboardScreen.classList.add('hidden');
-            subjectScreen.classList.add('hidden');
-            testSelectionScreen.classList.add('hidden');
+        /**
+         * Helper function to manage animations and visibility
+         * Pass `null` for screenToHide if it's the first screen.
+         */
+        function animateScreenTransition(screenToHide, screenToShow) {
+            // Hide all screens first to prevent flashes
+            allScreens.forEach(screen => {
+                if(screen.id !== screenToShow.id) {
+                     screen.classList.add('hidden');
+                }
+            });
+
+            // If we are showing a screen inside the main content, ensure main content is visible
+            if (screenToShow.id !== 'login-screen') {
+                mainContent.classList.remove('hidden');
+            }
+
+            // Find animatable content in the new screen
+            const animatables = screenToShow.querySelectorAll('.animatable');
             
-            // Show the home screen
-            homeScreen.classList.remove('hidden');
-            
-            // Trigger the pop-in animation for the home screen
-            homeAnimatables.forEach(el => el.classList.add('pop-in'));
-            
-            // Make sure the subject screen is hidden
-            showGradeScreen();
+            // Reset and trigger animation
+            animatables.forEach(el => {
+                el.classList.remove('pop-in'); 
+                void el.offsetWidth; // Force browser reflow
+                el.classList.add('pop-in'); 
+            });
+
+            screenToShow.classList.remove('hidden');
+            window.scrollTo(0, 0);
         }
         
-        // --- 5. NAVIGATION LOGIC (FOR STUDENTS) ---
+        // --- 6. STUDENT NAVIGATION LOGIC ---
         
-        /**
-         * Shows the Test Selection Screen
-         * Fetches tests from GitHub
-         */
-        async function showTestScreen(event) {
-            const subject = event.currentTarget.dataset.subject;
-            
-            // e.g., "3rd Grade - ELA"
-            testTitle.textContent = `${currentGrade} - ${subject}`;
-            testSubtitle.textContent = "Please select a test.";
-            errorMessage.textContent = ""; // Clear old errors
-            
-            // Clear old tests and show loading spinner
-            testGrid.innerHTML = '';
-            loadingSpinner.classList.remove('hidden');
+        // Grade buttons navigate to Subject screen
+        gradeButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                currentGrade = e.currentTarget.dataset.grade; 
+                currentGradePath = e.currentTarget.dataset.path;
+                
+                // ** NEW ** Handle 4th Grade Science direct-to-test
+                if (currentGradePath === "4th Grade Science") {
+                    currentSubject = ""; // No subject for this one
+                    testTitle.textContent = currentGrade;
+                    testSubtitle.textContent = "Please select a test.";
+                    fetchTestsFromGitHub(currentGradePath); // Directly fetch tests
+                    animateScreenTransition(homeScreen, testSelectionScreen);
+                } else {
+                    // Normal flow: show subject screen
+                    subjectTitle.textContent = currentGrade;
+                    animateScreenTransition(homeScreen, subjectScreen);
+                }
+            });
+        });
 
-            // Hide subjects, show tests
-            animateScreenTransition(subjectScreen, testSelectionScreen);
-            
-            // Build the final path, e.g., "3rd/ELA" or "3rd/Mathematics"
-            const dataPath = `${currentGradePath}/${subject}`;
+        // Subject buttons navigate to Test screen
+        subjectButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                currentSubject = e.currentTarget.dataset.subject;
+                
+                // e.g., "3rd Grade - ELA"
+                testTitle.textContent = `${currentGrade} - ${currentSubject}`;
+                testSubtitle.textContent = "Please select a test.";
+                
+                // Build the final path, e.g., "3rd/ELA"
+                const dataPath = `${currentGradePath}/${currentSubject}`;
+                fetchTestsFromGitHub(dataPath);
+                animateScreenTransition(subjectScreen, testSelectionScreen);
+            });
+        });
+
+        // Back buttons
+        backToGradesBtn.addEventListener('click', () => animateScreenTransition(subjectScreen, homeScreen));
+        backToSubjectsBtn.addEventListener('click', () => {
+             // ** NEW ** Smart back button
+             if (currentGradePath === "4th Grade Science") {
+                animateScreenTransition(testSelectionScreen, homeScreen); // Go all the way home
+             } else {
+                animateScreenTransition(testSelectionScreen, subjectScreen); // Go to subjects
+             }
+        });
+        backToTestsBtn.addEventListener('click', () => animateScreenTransition(testTakerScreen, testSelectionScreen));
+        backToHomeBtn.addEventListener('click', () => animateScreenTransition(scoreScreen, homeScreen));
+        
+
+        /**
+         * ** NEW **
+         * Fetches tests from GitHub and populates the test grid
+         */
+        async function fetchTestsFromGitHub(dataPath) {
+            errorMessage.textContent = ""; 
+            testGrid.innerHTML = ''; // Clear old tests
+            loadingSpinner.classList.remove('hidden'); // Show loading
+
             const apiUrl = `${GITHUB_API_URL}/${dataPath}?ref=${GITHUB_BRANCH}`;
 
             try {
@@ -571,24 +671,29 @@
                 }
                 const items = await response.json();
                 
-                // Filter for files and directories only (removes submodules, etc.)
-                const tests = items.filter(item => item.type === 'file' || item.type === 'dir');
+                // ** NEW ** Filter for .json files only
+                const tests = items.filter(item => item.type === 'file' && item.name.endsWith('.json'));
 
                 if (tests.length === 0) {
                     testSubtitle.textContent = "No tests found in this folder.";
                 } else {
-                    // Populate the grid with test boxes
+                    testSubtitle.textContent = "Please select a test.";
+                    // Populate the grid with test buttons
                     tests.forEach(item => {
-                        const testBox = document.createElement('a');
-                        testBox.href = item.html_url; // Links to the GitHub file/folder
-                        testBox.target = "_blank";
-                        testBox.rel = "noopener noreferrer";
-                        // Clean up the name (e.g., "Test_1.html" -> "Test 1")
-                        const displayName = item.name.replace(/_/g, ' ').replace(/\.html$|\.md$/i, '');
+                        const testButton = document.createElement('button');
+                        // Store the raw download URL
+                        testButton.dataset.downloadUrl = item.download_url;
                         
-                        testBox.textContent = displayName;
-                        testBox.className = "flex items-center justify-center text-center text-white p-8 rounded-2xl shadow-md font-bold text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-slate-600 hover:bg-slate-700";
-                        testGrid.appendChild(testBox);
+                        // Clean up the name (e.g., "Test_1.json" -> "Test 1")
+                        const displayName = item.name.replace(/_/g, ' ').replace(/\.json$/i, '');
+                        
+                        testButton.textContent = displayName;
+                        testButton.className = "test-btn flex items-center justify-center text-center text-white p-8 rounded-2xl shadow-md font-bold text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg bg-slate-600 hover:bg-slate-700";
+                        
+                        // ** NEW ** Add click listener to start the test
+                        testButton.addEventListener('click', () => startTest(item.download_url));
+                        
+                        testGrid.appendChild(testButton);
                     });
                 }
 
@@ -596,101 +701,171 @@
                 console.error("Error fetching GitHub tests:", error);
                 errorMessage.textContent = `Error loading tests. (${error.message})`;
             } finally {
-                // Hide spinner regardless of outcome
-                loadingSpinner.classList.add('hidden');
+                loadingSpinner.classList.add('hidden'); // Hide spinner
             }
-        }
-
-        /**
-         * Shows the Subject Selection Screen
-         */
-        function showSubjectScreen(event) {
-            currentGrade = event.currentTarget.dataset.grade; 
-            currentGradePath = event.currentTarget.dataset.path;   
-
-            subjectTitle.textContent = currentGrade;
-            
-            animateScreenTransition(homeScreen, subjectScreen);
-        }
-
-        /**
-         * Shows the Grade Selection Screen (Home)
-         */
-        function showGradeScreen() {
-            // This can be called from either the Subject screen or Test screen
-            animateScreenTransition(subjectScreen, homeScreen);
-            animateScreenTransition(testSelectionScreen, homeScreen); // Ensures it works from test screen too
-            animateScreenTransition(teacherDashboardScreen, homeScreen); // Ensures it works from dashboard
-        }
-
-        /**
-         * Shows the Subject Screen when coming from the Test Screen
-         */
-        function showSubjectScreenFromTests() {
-            animateScreenTransition(testSelectionScreen, subjectScreen);
         }
         
+        // --- 7. ** NEW ** TEST TAKER LOGIC ---
+        
         /**
-         * Helper function to manage animations and visibility
+         * Fetches the quiz JSON and renders the test
          */
-        function animateScreenTransition(screenToHide, screenToShow) {
-            // Only run if the screen isn't already visible
-            if (screenToShow.classList.contains('hidden')) {
-                // Find animatable content in the new screen
-                const animatables = screenToShow.querySelectorAll('.animatable');
-                
-                // Reset and trigger animation
-                animatables.forEach(el => {
-                    el.classList.remove('pop-in'); 
-                    void el.offsetWidth; // Force browser reflow
-                    el.classList.add('pop-in'); 
-                });
+        async function startTest(downloadUrl) {
+            // Show loading state...
+            quizForm.innerHTML = '<div class="loader loader-gray mx-auto"></div>';
+            quizTitle.textContent = "Loading Test...";
+            quizStandard.textContent = "";
+            testSubmitMessage.textContent = "";
+            animateScreenTransition(testSelectionScreen, testTakerScreen);
 
-                screenToHide.classList.add('hidden');
-                screenToShow.classList.remove('hidden');
-                window.scrollTo(0, 0);
+            try {
+                const response = await fetch(downloadUrl);
+                if (!response.ok) throw new Error("Could not download test file.");
+                
+                const quizData = await response.json();
+                currentQuizData = quizData; // Save quiz data globally
+                renderTest(quizData);
+                
+            } catch (error) {
+                console.error("Error starting test:", error);
+                quizForm.innerHTML = `<p class="text-red-500 text-center">Error: Could not load this test. Please go back and try again.</p>`;
             }
         }
 
-        // --- 6. EVENT LISTENERS ---
+        /**
+         * Builds the quiz HTML from the JSON data
+         */
+        function renderTest(quizData) {
+            quizForm.innerHTML = ''; // Clear loading spinner
+            quizTitle.textContent = quizData.title;
+            quizStandard.textContent = `Standard: ${quizData.standard}`;
 
-        // *** NEW *** Teacher Dashboard Listeners
+            // Loop through questions and build HTML
+            quizData.questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.id = `question-${index}`;
+                questionDiv.className = "bg-gray-50 p-6 rounded-2xl shadow-inner";
+                
+                let optionsHtml = '';
+                // TODO: Add support for other question types (EBSR, etc.)
+                if (question.type === "Multiple-Choice") {
+                    const optionsArray = question.options.map((option, i) => `
+                        <label class="flex items-center p-4 border rounded-xl has-[:checked]:bg-blue-100 has-[:checked]:border-blue-500 cursor-pointer">
+                            <input type="radio" name="question-${index}" value="${i}" class="h-5 w-5 text-blue-600" required>
+                            <span class="ml-4 text-lg text-slate-700">${option}</span>
+                        </label>
+                    `).join('');
+                    
+                    optionsHtml = `<div class="space-y-3 mt-4">${optionsArray}</div>`;
+                }
+                
+                questionDiv.innerHTML = `
+                    <p class="text-lg font-semibold text-slate-700">Question ${index + 1} of ${quizData.questions.length}</p>
+                    ${question.stimulus ? `<div class="text-lg text-slate-800 mt-4 p-4 border-l-4 border-gray-300">${question.stimulus}</div>` : ''}
+                    <p class="text-xl text-slate-900 mt-4">${question.stem}</p>
+                    ${optionsHtml}
+                `;
+                quizForm.appendChild(questionDiv);
+            });
+        }
+        
+        // Add submit listener to the form
+        quizForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleSubmitTest();
+        });
+        
+        // The submit button is outside the form, so we trigger the form's submit event
+        submitTestBtn.addEventListener('click', () => {
+            // Check if form is valid before submitting
+            if (quizForm.checkValidity()) {
+                quizForm.requestSubmit();
+            } else {
+                testSubmitMessage.textContent = "Please answer all questions before submitting.";
+            }
+        });
+
+        /**
+         * Grades the test and saves the score
+         */
+        async function handleSubmitTest() {
+            if (!currentQuizData || !currentUserId) return;
+
+            let score = 0;
+            const failedSkills = new Set();
+            const formData = new FormData(quizForm);
+
+            currentQuizData.questions.forEach((question, index) => {
+                const selectedAnswer = formData.get(`question-${index}`); // This will be a string "0", "1", etc.
+                
+                // Note: Using == to compare string from form with number from JSON
+                if (selectedAnswer == question.correctAnswerIndex) {
+                    score++;
+                } else {
+                    // Track the skill for the AI report
+                    if(question.skill) {
+                        failedSkills.add(question.skill);
+                    }
+                }
+            });
+
+            const total = currentQuizData.questions.length;
+            const percentage = Math.round((score / total) * 100);
+
+            // Display the score screen
+            finalScore.textContent = `${score} / ${total}`;
+            if (percentage >= currentQuizData.passingScore) {
+                scoreMessage.textContent = `Congratulations, you passed! (${percentage}%)`;
+                aiReportSection.classList.add('hidden'); // Hide AI report
+            } else {
+                scoreMessage.textContent = `Don't give up, you'll get it next time! (${percentage}%)`;
+                aiReportSection.classList.remove('hidden'); // Show AI report
+            }
+            animateScreenTransition(testTakerScreen, scoreScreen);
+
+            // Save the score to Firestore
+            try {
+                const submissionsRef = collection(db, "submissions");
+                await addDoc(submissionsRef, {
+                    studentId: currentUserId,
+                    testTitle: currentQuizData.title,
+                    testStandard: currentQuizData.standard,
+                    score: score,
+                    totalQuestions: total,
+                    percentage: percentage,
+                    failedSkills: Array.from(failedSkills),
+                    submittedAt: serverTimestamp()
+                });
+            } catch (error) {
+                console.error("Error saving submission:", error);
+                // Don't block the user, just log the error
+            }
+        }
+        
+        // Placeholder for AI Report Button
+        getAiReportBtn.addEventListener('click', () => {
+            aiReportMessage.textContent = "Generating your report... (AI feature coming soon!)";
+            // In the future, this will call a Firebase Function
+            // and pass it the `failedSkills` array.
+        });
+
+
+        // --- 8. ** NEW ** TEACHER DASHBOARD LOGIC ---
+        
         createStudentForm.addEventListener('submit', (e) => {
             e.preventDefault();
             createStudentMessage.textContent = "Connecting to backend...";
 
             // !! IMPORTANT !!
-            // This is just a placeholder for now.
             // This functionality requires a Firebase Function to work securely.
             console.log("Form submitted. This will call a Firebase Function.");
-            console.log("Email:", studentEmail.value);
-            console.log("Password:", studentPassword.value);
 
             // Simulate a delay and show a message
             setTimeout(() => {
+                // This is a placeholder. We will build the function next.
                 createStudentMessage.textContent = "Error: Backend function not deployed.";
-                // In a real app, you would clear the form on success:
-                // studentEmail.value = '';
-                // studentPassword.value = '';
             }, 1000);
         });
-
-        // Student Navigation Listeners
-        // Grade buttons navigate to Subject screen
-        gradeButtons.forEach(button => {
-            button.addEventListener('click', showSubjectScreen);
-        });
-
-        // Subject buttons navigate to Test screen
-        elaBtn.addEventListener('click', showTestScreen);
-        mathBtn.addEventListener('click', showTestScreen);
-
-        // Back buttons
-        backBtn.addEventListener('click', showGradeScreen); // back-to-grades-btn
-        backToSubjectsBtn.addEventListener('click', showSubjectScreenFromTests);
-        
-        // Set the direct link for 4th Grade Science
-        scienceLink.href = `${baseRepoUrl}/4th Grade Science`;
 
     </script>
 
