@@ -107,8 +107,7 @@
       "type": "Hot-Text",
       "dok": 2,
       "skill": "Identifying Figurative Language (Hyperbole)",
-      "stimulus": "<p>Read the paragraph below. Then, click on the sentence that contains an example of hyperbole.</p><p>(1) The town fair was a tornado of color and sound. (2) Banners snapped in the wind like giant, colorful birds. (3) The smell of popcorn and cotton candy hung in the air, a sweet, sugary blanket. (4) Kids laughed on the carousel, their voices ringing like bells. (5) \"This line for the Ferris wheel is a million miles long!\" complained my brother, Leo. (6) He was always a grumpy bear in the morning.</p>",
-      "stem": "Click on the sentence that contains an example of hyperbole.",
+      "stem": "Read the paragraph below. Then, click on the sentence that contains an example of hyperbole.",
       "maxSelections": 1,
       "sentences": [
         {
@@ -141,8 +140,7 @@
       "type": "Hot-Text",
       "dok": 2,
       "skill": "Identifying Figurative Language (Imagery)",
-      "stimulus": "<p>Read the paragraph below. Then, click on the sentence that uses imagery to appeal to the reader's sense of smell.</p><p>(1) The town fair was a tornado of color and sound. (2) Banners snapped in the wind like giant, colorful birds. (3) The smell of popcorn and cotton candy hung in the air, a sweet, sugary blanket. (4) Kids laughed on the carousel, their voices ringing like bells. (5) \"This line for the Ferris wheel is a million miles long!\" complained my brother,Leo. (6) He was always a grumpy bear in the morning.</p>",
-      "stem": "Click on the sentence that uses imagery to appeal to the reader's sense of smell.",
+      "stem": "Read the paragraph below. Then, click on the sentence that uses imagery to appeal to the reader's sense of smell.",
       "maxSelections": 1,
       "sentences": [
         {
@@ -175,7 +173,7 @@
       "type": "Constructed-Response",
       "dok": 3,
       "skill": "Explaining Impact on Meaning and Experience",
-      "stimulus": "<p>(1) The town fair was a tornado of color and sound. (2) Banners snapped in the wind like giant, colorful birds. (3) The smell of popcorn and cotton candy hung in the air, a sweet, sugary blanket. (4) Kids laughed on the carousel, their voices ringing like bells. (5) \"This line for the Ferris wheel is a million miles long!\" complained my brother, Leo. (6) He was always a grumpy bear in the morning.</p>",
+      "stimulus": "<p>(1) The town fair was a tornado of color and sound. (2) Banners snapped in the wind like giant, colorful birds. (3) The smell of popcorn and cotton candy hung in the air, a sweet, sugary blanket. (4) Kids laughed on the carousel, their voices ringing like bells. (5) \"This line for the Ferris wheel is a million miles long!\" complained my brother, Leo. (6) He was always a grumpy bear in theL morning.</p>",
       "stem": "Read sentence 1: \"The town fair was a tornado of color and sound.\"\n\nExplain what this metaphor means and how it contributes to the reader's experience of the fair."
     },
     {
