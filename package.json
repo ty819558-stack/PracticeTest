@@ -1,0 +1,9 @@
+{
+  "name": "sc-ready-app",
+  "version": "1.0.0",
+  "description": "SC Ready app with secure AI function",
+  "dependencies": {
+    "node-fetch": "^3.0"
+  },
+  "type": "module"
+}
