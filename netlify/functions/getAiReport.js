@@ -97,7 +97,10 @@ export async function handler(event, context) {
         };
 
     } catch (error) {
-        console.error("Error in Netlify function:", error.message);
+        // ** THIS IS THE UPDATED PART **
+        // Instead of just logging error.message, we log the whole error
+        // for better debugging in Netlify's function logs.
+        console.error("Error in Netlify function:", error);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: error.message }),
