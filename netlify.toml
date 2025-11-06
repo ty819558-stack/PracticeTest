@@ -1,0 +1,7 @@
+# This file tells Netlify how to build and configure your site.
+
+[functions]
+  # This sets the timeout for all functions.
+  # We're increasing it from the default 10s to 26s
+  # to give the Google AI API plenty of time to respond.
+  timeout = 26
